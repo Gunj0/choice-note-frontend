@@ -7,7 +7,7 @@ import Link from "next/link";
 
 export default async function Home() {
   // APIからノートデータを取得
-  const data: Note[] = await fetch(process.env.API_URL + PATH.API.NOTE).then(
+  const data: Note[] = await fetch(process.env.API_URL + PATH.API.MEMO).then(
     (res) => res.json()
   );
 
@@ -36,7 +36,8 @@ export default async function Home() {
             <p className="text-sm text-gray-500">
               {new Date(note.createdAt).toLocaleDateString("ja-JP")}
               {" (Update: "}
-              {new Date(note.updatedAt).toLocaleDateString("ja-JP")} {") "}
+              {new Date(note.updatedAt).toLocaleDateString("ja-JP")}
+              {")"}
             </p>
           </div>
         ))}

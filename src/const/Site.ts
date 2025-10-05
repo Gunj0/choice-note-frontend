@@ -1,5 +1,5 @@
 export const SITE = {
   title: "わたしの比較メモ",
-  description: "あなただけの比較過程を整理しよう",
+  description: "自分だけのガジェットや家電などの比較過程を記録しよう",
   author: "Gunj0",
 };

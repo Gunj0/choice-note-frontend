@@ -2,8 +2,21 @@ import { PATH } from "@/const/Path";
 import { SITE } from "@/const/Site";
 import { NotebookPen } from "lucide-react";
 import type { Metadata } from "next";
+import { M_PLUS_Rounded_1c, Noto_Sans_JP } from "next/font/google";
 import Link from "next/link";
 import "./globals.css";
+
+const notoSansJP = Noto_Sans_JP({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  display: "swap",
+});
+
+const mPlusRounded = M_PLUS_Rounded_1c({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: SITE.title + " | " + SITE.description,
@@ -17,7 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
-      <body className={`antialiased`}>
+      <body className={`${notoSansJP.className} antialiased`}>
         {/* ヘッダー */}
         <header className="ml-4 mt-4">
           <h1 className="text-lg font-bold text-foreground mb-2 text-balance">
