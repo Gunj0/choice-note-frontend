@@ -74,3 +74,44 @@ src/
     "@radix-ui/react-slot": "^1.2.3",
   }
 ```
+
+## Card
+
+- [Card](https://ui.shadcn.com/docs/components/card)
+
+```zsh
+% npx shadcn@latest add card
+✔ Checking registry.
+✔ Created 1 file:
+  - src/components/ui/card.tsx
+```
+
+## Input
+
+- [Input](https://ui.shadcn.com/docs/components/input)
+
+```zsh
+% npx shadcn@latest add input
+✔ Checking registry.
+✔ Created 1 file:
+  - src/components/ui/input.tsx
+```
+
+## Textarea
+
+- [Button](https://ui.shadcn.com/docs/components/textarea)
+
+```zsh
+% npx shadcn@latest add textarea
+✔ Checking registry.
+✔ Created 1 file:
+  - src/components/ui/textarea.tsx
+```
+
+- 追加 package
+
+```json
+  "dependencies": {
+    "@radix-ui/react-slot": "^1.2.3",
+  }
+```
