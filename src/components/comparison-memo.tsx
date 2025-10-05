@@ -4,42 +4,18 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { Criterion } from "@/interface/Criterion";
 import { Check, Plus, X } from "lucide-react";
 import { useState } from "react";
-
-interface Criterion {
-  id: string;
-  name: string;
-  priority: string;
-}
-
-interface Product {
-  id: string;
-  name: string;
-  evaluations: Record<string, string>;
-  isSelected: boolean;
-}
-
-const CATEGORY_TAGS = [
-  "スマートフォン",
-  "PC・ノートPC",
-  "タブレット",
-  "モニター",
-  "キーボード",
-  "マウス",
-  "イヤホン・ヘッドホン",
-  "スピーカー",
-  "カメラ",
-  "洗濯機",
-  "冷蔵庫",
-  "掃除機",
-  "エアコン",
-  "テレビ",
-];
+import { CATEGORY_TAGS } from "../const/Category";
+import { Product } from "../interface/Product";
+import StepNumber from "./step-number";
 
 export default function ComparisonMemo() {
   const [productCategory, setProductCategory] = useState("");
-  const [criteria, setCriteria] = useState<Criterion[]>([]);
+  const [criteria, setCriteria] = useState<Criterion[]>([
+    { id: crypto.randomUUID(), name: "価格", priority: "2" },
+  ]);
   const [products, setProducts] = useState<Product[]>([]);
   const [finalNotes, setFinalNotes] = useState("");
 
@@ -117,25 +93,14 @@ export default function ComparisonMemo() {
   };
 
   return (
-    <div className="container mx-auto px-4 py-8 max-w-7xl">
-      <header className="mb-8 text-center">
-        <h1 className="text-4xl font-bold text-foreground mb-2 text-balance">
-          わたしの比較メモ 〜ひかメモ〜
-        </h1>
-        <p className="text-muted-foreground text-pretty">
-          ガジェットや家電の購入検討を整理しよう
-        </p>
-      </header>
-
-      <div className="space-y-6">
+    <div className="container mx-auto px-4 py-2 max-w-7xl">
+      <div className="space-y-4">
         {/* Step 1: Product Category */}
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              <span className="flex items-center justify-center w-8 h-8 rounded-full bg-primary text-primary-foreground text-sm font-bold">
-                1
-              </span>
-              購入検討する製品カテゴリー
+              <StepNumber number={1} />
+              カテゴリー
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
