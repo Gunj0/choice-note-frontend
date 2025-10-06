@@ -22,8 +22,8 @@ export default async function Home() {
       </div>
 
       {/* 新規作成 */}
-      <Button asChild className="w-24 m-8 mx-auto block text-center">
-        <Link href={PATH.MEMO.NEW}>New +</Link>
+      <Button asChild className="w-40 m-8 mx-auto block text-center">
+        <Link href={PATH.MEMO.NEW}>メモを始める</Link>
       </Button>
 
       {/* メモ一覧 */}
@@ -34,10 +34,16 @@ export default async function Home() {
             <h3 className="text-xl font-semibold mb-2">{note.title}</h3>
             <p className="text-gray-700 mb-2">{note.content}</p>
             <p className="text-sm text-gray-500">
-              {new Date(note.createdAt).toLocaleDateString("ja-JP")}
-              {" (Update: "}
-              {new Date(note.updatedAt).toLocaleDateString("ja-JP")}
-              {")"}
+              {`${new Date(note.updatedAt).toLocaleDateString("ja-JP", {
+                year: "numeric",
+                month: "2-digit",
+                day: "2-digit",
+              })} (Up:
+              ${new Date(note.createdAt).toLocaleDateString("ja-JP", {
+                year: "numeric",
+                month: "2-digit",
+                day: "2-digit",
+              })})`}
             </p>
           </div>
         ))}

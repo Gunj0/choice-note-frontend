@@ -2,20 +2,14 @@ import { PATH } from "@/const/Path";
 import { SITE } from "@/const/Site";
 import { NotebookPen } from "lucide-react";
 import type { Metadata } from "next";
-import { M_PLUS_Rounded_1c, Noto_Sans_JP } from "next/font/google";
+import { Noto_Sans_JP } from "next/font/google";
 import Link from "next/link";
 import "./globals.css";
 
 const notoSansJP = Noto_Sans_JP({
-  subsets: ["latin"],
-  weight: ["400", "500", "700"],
-  display: "swap",
-});
-
-const mPlusRounded = M_PLUS_Rounded_1c({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-  display: "swap",
+  subsets: ["latin"], // latinだけを指定して軽量化
+  weight: ["400", "500", "700"], // 通常、Medium、Bold
+  display: "swap", // 読み込まれるまで別フォントで代替表示
 });
 
 export const metadata: Metadata = {
