@@ -1,4 +1,4 @@
-export interface Note {
+export interface Memo {
   noteId: number;
   title: string;
   content: string;

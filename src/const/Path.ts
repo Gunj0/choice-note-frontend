@@ -1,8 +1,8 @@
 export const PATH = {
   API: {
-    MEMO: "note",
+    MEMO: "/note",
 
-    PRODUCT: "product",
+    PRODUCT: "/product",
   },
   LOGIN: "/login",
   SIGNUP: "/signup",

@@ -8,5 +8,6 @@
 ```
 
 - Turbopack は Next.js 15 では正式ではなく、OpenNext では対応していないらしい
+  - [[FEATURE] support turbopack](https://github.com/opennextjs/opennextjs-cloudflare/issues/569#issuecomment-2849350717)
   - [Turbopack Builds](https://nextjs.org/blog/next-15-4#turbopack-builds)
 - `"build": "next build"` から`--turbopack`を外すと解消
