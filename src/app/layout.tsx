@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     siteName: SITE.TITLE,
     images: [
       {
-        url: `${SITE.OGP}`,
+        url: SITE.OGP,
         width: 1200,
         height: 630,
         alt: SITE.TITLE,

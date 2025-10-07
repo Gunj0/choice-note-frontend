@@ -33,7 +33,7 @@ export default async function Home() {
       {/* タイトルロゴ */}
       <div className="mt-8 mb-8 text-center">
         <h1 className="text-4xl font-bold text-foreground mb-2 text-balance">
-          <Link href={PATH.HOME}>{SITE.TITLE}</Link>
+          {SITE.TITLE}
         </h1>
         <p className="text-muted-foreground text-pretty">{SITE.DESCRIPTION}</p>
       </div>
