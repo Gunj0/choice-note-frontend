@@ -54,7 +54,7 @@ export default async function RootLayout({
       </head>
       <body className={`${notoSansJP.className} antialiased`}>
         <SessionProvider>
-          <div className="min-h-screen">{children}</div>
+          <>{children}</>
 
           <footer className="w-full text-center p-4 mt-8 border-t">
             <p className="text-sm text-gray-500">

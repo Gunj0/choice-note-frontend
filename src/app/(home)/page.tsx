@@ -19,14 +19,14 @@ const getMemosJson = async (): Promise<Memo[]> => {
     }
     return res.json();
   } catch (error) {
-    console.error("Error fetching data:", error);
+    console.error("Error fetching memos:", error);
     return [];
   }
 };
 
 export default async function Home() {
   // APIからメモデータを取得
-  const data = await getMemosJson();
+  const memos = await getMemosJson();
 
   return (
     <main className="min-h-screen bg-background">
@@ -46,22 +46,22 @@ export default async function Home() {
       {/* メモ一覧 */}
       <Card className="m-4 p-4">
         <h2 className="text-2xl font-bold my-2">みんなの比較メモ</h2>
-        {data.length == 0 ? (
+        {memos.length == 0 ? (
           <p className="text-gray-500">まだメモがありません。</p>
         ) : (
           <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-            {data.map((note) => (
+            {memos.map((memo) => (
               <Card
-                key={note.noteId}
+                key={memo.noteId}
                 className="p-4 hover:shadow-lg transition-shadow"
               >
                 {/* line-clamp-2: 3行以上になる場合は...で省略する */}
                 <h3 className="text-xl font-semibold line-clamp-2">
-                  {note.title}
+                  {memo.title}
                 </h3>
-                <p className="text-gray-700">{note.content}</p>
+                <p className="text-gray-700">{memo.content}</p>
                 <p className="text-sm text-gray-500">
-                  {`更新日: ${formatDate(note.updatedAt)}`}
+                  {`更新日: ${formatDate(memo.updatedAt)}`}
                 </p>
               </Card>
             ))}

@@ -9,9 +9,9 @@ export default async function HomeLayout({
   const session = await auth();
 
   return (
-    <div>
+    <>
       <Header session={session} />
-      <div className="min-h-screen">{children}</div>
-    </div>
+      <main className="min-h-screen">{children}</main>
+    </>
   );
 }

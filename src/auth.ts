@@ -53,7 +53,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
   // 追加処理
   callbacks: {
     // ログイン時
-    async signIn({ user, account, profile, email, credentials }) {
+    async signIn({ user, account }) {
       // Googleログイン
       if (account?.provider === "google") {
         try {
@@ -90,12 +90,12 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
     },
 
     // ログイン・ログアウト等のリダイレクト時
-    async redirect({ url, baseUrl }) {
+    async redirect({ baseUrl }) {
       return baseUrl;
     },
 
     // JWTトークン生成・更新時
-    async jwt({ token, account, profile, user }) {
+    async jwt({ token, user }) {
       // Userオブジェクトが存在する場合、つまりログイン時にトークンを更新
       if (user) {
         token.accessToken = user.token;
@@ -104,7 +104,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
     },
 
     // セッションチェック時
-    async session({ session, token, user }) {
+    async session({ session, token }) {
       session.accessToken = token.accessToken as string;
       return session;
     },

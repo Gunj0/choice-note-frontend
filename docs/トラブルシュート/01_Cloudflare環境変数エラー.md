@@ -1,4 +1,6 @@
-# プリレンダリングエラー
+# Cloudflare 環境変数エラー
+
+- Cloudflare Worker へデプロイ時にエラー
 
 - [Next.js の事前レンダリング エラー](https://nextjs.org/docs/messages/prerender-error)
 

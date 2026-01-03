@@ -207,7 +207,7 @@ export default function ComparisonMemo() {
                     </tr>
                   </thead>
                   <tbody>
-                    {products.map((product, productIndex) => (
+                    {products.map((product) => (
                       <tr
                         key={product.id}
                         className={`transition-all duration-200 border-b border-border/30 last:border-b-0 ${
