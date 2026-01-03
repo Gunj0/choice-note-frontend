@@ -1,11 +1,11 @@
 export const PATH = {
   API: {
     MEMO: "/memo",
-    USER: "/user",
   },
+  HOME: "/",
   LOGIN: "/login",
   SIGNUP: "/signup",
-  HOME: "/",
+  USER: "/user",
   MEMO: {
     NEW: "/new",
     EDIT: "/edit",

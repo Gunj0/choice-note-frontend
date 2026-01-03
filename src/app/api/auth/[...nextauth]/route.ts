@@ -1,3 +1,4 @@
-const handler = () => {};
+import { handlers } from "@/auth";
 
-export { handler as GET, handler as POST };
+// Auth.jsのAPIルートハンドラ(エンドポイント)
+export const { GET, POST } = handlers;

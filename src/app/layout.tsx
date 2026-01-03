@@ -1,9 +1,7 @@
-import { PATH } from "@/const/Path";
 import { SITE } from "@/const/Site";
-import { NotebookPen } from "lucide-react";
 import type { Metadata } from "next";
+import { SessionProvider } from "next-auth/react";
 import { Noto_Sans_JP } from "next/font/google";
-import Link from "next/link";
 import "./globals.css";
 
 const notoSansJP = Noto_Sans_JP({
@@ -51,24 +49,19 @@ export default async function RootLayout({
 }>) {
   return (
     <html lang="ja">
+      <head>
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml"></link>
+      </head>
       <body className={`${notoSansJP.className} antialiased`}>
-        {/* ヘッダー */}
-        <header className=" mt-4 px-4 sm:px-6 lg:px-8">
-          <h1 className="text-lg font-bold text-foreground mb-2 text-balance">
-            <NotebookPen className="inline mb-1 mr-1" size={24} aria-hidden />
-            <Link href={PATH.HOME}>{SITE.TITLE}</Link>
-          </h1>
-        </header>
+        <SessionProvider>
+          <div className="min-h-screen">{children}</div>
 
-        {/* メイン */}
-        {children}
-
-        {/* フッター */}
-        <footer className="w-full text-center p-4 mt-8 border-t">
-          <p className="text-sm text-gray-500">
-            &copy; {SITE.YEAR} {SITE.AUTHOR}. All rights reserved.
-          </p>
-        </footer>
+          <footer className="w-full text-center p-4 mt-8 border-t">
+            <p className="text-sm text-gray-500">
+              &copy; {SITE.YEAR} {SITE.AUTHOR}. All rights reserved.
+            </p>
+          </footer>
+        </SessionProvider>
       </body>
     </html>
   );
